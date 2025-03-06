@@ -67,7 +67,7 @@ async function fetchStudents() {
         } else {
             data.students.forEach((student) => {
                 const studentItem = document.createElement('li');
-                studentItem.innerText = `學號: ${student.student_id} 姓名: ${student.name}`;
+                studentItem.innerText = `學號: ${student.student_id} 姓名: ${student.student_name}`;
                 studentList.appendChild(studentItem);
             });
         }
