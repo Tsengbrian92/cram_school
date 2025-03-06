@@ -5,10 +5,11 @@ app = Flask(__name__)
 
 # MySQL 連接資訊
 db_config = {
-    "host": "127.0.0.1",
-    "user": "root",
-    "password": "Aa0901155900",  # 替換為你的 MySQL 密碼
-    "database": "studentif"   # 替換為你的資料庫名稱
+    "host": "192.168.50.9",  # MySQL 伺服器 IP
+    "user": "flask_user",  # 確保不是 root
+    "password": "0901155900",
+    "database": "studentif",
+    "port": 3306
 }
 
 @app.route('/receive_uid', methods=['POST'])

@@ -1,7 +1,7 @@
 import serial
 import requests
 
-SERIAL_PORT = "COM13"  # Windows
+SERIAL_PORT = "COM3"  # Windows
 BAUD_RATE = 115200
 API_URL = "http://127.0.0.1:5000/receive_uid"  # Flask API 端點
 
