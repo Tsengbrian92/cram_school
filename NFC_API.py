@@ -29,4 +29,4 @@ try:
 except serial.SerialException as e:
     print(f"Error: Could not open serial port {SERIAL_PORT}: {e}")
 except Exception as e:
-    print(f"Unexpected error: {e}")
+    print(f"Unexpected error: {e}") # dddssddsfsdfsdfsfsdfsdsfsdf
