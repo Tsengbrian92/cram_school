@@ -3,7 +3,7 @@ import requests
 
 SERIAL_PORT = "COM3"  # Windows
 BAUD_RATE = 115200
-API_URL = "http://192.168.50.9:5000/receive_uid"  # Flask API 端點
+API_URL = "http://26.8.220.101:5000/receive_uid"  # Flask API 端點
 
 try:
     # 連接 Arduino
@@ -29,4 +29,4 @@ try:
 except serial.SerialException as e:
     print(f"Error: Could not open serial port {SERIAL_PORT}: {e}")
 except Exception as e:
-    print(f"Unexpected error: {e}") # fssfffffffffffffffffff
+    print(f"Unexpected error: {e}")
