@@ -5,12 +5,13 @@ app = Flask(__name__)
 
 # MySQL 連接資訊
 db_config = {
-    "host": "192.168.50.9",  # MySQL 伺服器 IP
-    "user": "flask_user",  # 確保不是 root
-    "password": "0901155900",
-    "database": "studentif",
-    "port": 3306
+    "host": "127.0.0.1",  # MySQL 伺服器的區域網路 IP
+    "port": 3306,
+    "user": "root",
+    "password": "Aa0901155900",  # 請確保密碼正確
+    "database": "studentif"
 }
+
 
 @app.route('/receive_uid', methods=['POST'])
 def receive_uid():
@@ -46,6 +47,6 @@ def receive_uid():
             connection.close()
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
 
 

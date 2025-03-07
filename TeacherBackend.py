@@ -425,13 +425,13 @@ def update_class_students():
                 cursor.execute(insert_student_query, (student_id, student['name'], student['email'], student['phone']))
 
             # 檢查是否已經在點名表
-            cursor.execute(f"SELECT * FROM class_{class_code}_attendance WHERE student_id = %s", (student_id,))
+            cursor.execute(f"SELECT * FROM {class_code}_attendance WHERE student_id = %s", (student_id,))
             attendance_result = cursor.fetchone()
 
             if not attendance_result:
                 # 插入學生到點名表（初始狀態為 `缺席`）
                 add_attendance_query = f"""
-                INSERT INTO class_{class_code}_attendance (student_id)
+                INSERT INTO {class_code}_attendance (student_id)
                 VALUES (%s)
                 """
                 cursor.execute(add_attendance_query, (student_id,))
@@ -445,7 +445,7 @@ def update_class_students():
             cursor.execute(delete_query, (student_id,))
 
             # **從點名表刪除**
-            delete_attendance_query = f"DELETE FROM class_{class_code}_attendance WHERE student_id = %s"
+            delete_attendance_query = f"DELETE FROM {class_code}_attendance WHERE student_id = %s"
             cursor.execute(delete_attendance_query, (student_id,))
 
         # **3️⃣ 更新班級學生數**
